@@ -1,0 +1,13 @@
+.footer-div{
+    background-color: antiquewhite;
+}
+
+.footer-div>ul{   
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-div>ul>li{
+    font-size: 0.8rem;
+
+}

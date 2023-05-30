@@ -1,0 +1,23 @@
+.header-nav{
+    padding: 10px;
+    z-index: 1;
+    width: 90vw ;
+}
+
+.header-list{
+    background-color:#be9e10;
+    list-style-type: none;
+    margin: 0px;
+    display: flex;
+    justify-content: end;
+    opacity: 80%;
+}
+
+li{
+    margin-left:1rem;
+}
+
+li>a:hover{
+    color: red;
+    opacity: 0%;
+}

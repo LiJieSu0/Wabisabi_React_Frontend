@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+*{
+    font-size: 1.5rem;
+    min-height:100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body{
+    background-color: rgb(35, 165, 63);
+    min-height: 100vh;
+}
+
+.header-padding{
+    /* padding-top: 10vh; */
+}
+
+.page-div{
+    min-height: 100vh;
+}
