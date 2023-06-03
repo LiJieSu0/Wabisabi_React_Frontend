@@ -1,0 +1,33 @@
+.modal-background{
+    opacity:0;
+    pointer-events:none;
+    transition: 0.4s ease-in-out;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+.modal-showing-true{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-inner{
+    width:900px;
+    max-width:cal(100%-60px);
+    margin:auto;
+    margin-top: 100px;
+    display:flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.modal-text{
+    color:white;
+}

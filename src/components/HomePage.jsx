@@ -1,5 +1,5 @@
-import '../../css/Home.css';
-export function Home(){
+import '../../css/HomePage.css';
+export function HomePage(){
     return(
         <div className="home-img-div page-div header-padding">
             <div className='home-content-div header-padding'>

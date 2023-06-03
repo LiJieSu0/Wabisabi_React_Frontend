@@ -6,9 +6,9 @@ import '../css/App.css'
 import {NewTodoForm} from './components/NewTodoForm';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import {Home} from './components/Home';
-import {Menu} from './components/Menu';
-import {Order} from './components/Order';
+import {HomePage} from './components/HomePage';
+import {MenuPage} from './components/MenuPage';
+import {OrderPage} from './components/OrderPage';
 import {TodoList} from './components/TodoList';
 
 
@@ -57,17 +57,19 @@ export default function App(){
       <Header/>
       <Routes>
         <Route path='/' element={
-          <Home/>
+          <HomePage/>
         }
         />
         <Route path='/menu' element={
-          <Menu/>
+          <MenuPage/>
         }
         />
         <Route path='/order' element={
-          <Order/>
+          <OrderPage/>
         }
         />
+
+
         <Route path='/form' element={
           <div>
             <NewTodoForm addTodo={addTodo}/>
