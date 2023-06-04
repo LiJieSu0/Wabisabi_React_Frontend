@@ -11,6 +11,7 @@
     width:100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    
 }
 
 .modal-showing-true{
@@ -26,6 +27,7 @@
     display:flex;
     flex-direction: row;
     text-align: left;
+    z-index: 1;
 }
 
 .modal-text{

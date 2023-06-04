@@ -1,22 +1,10 @@
-import { useEffect, useState } from 'react';
-import { FetchItemsFromServer } from './ServerUtil';
-
+import { useContext } from 'react';
+import { wholeMenu } from './MyContext';
 export function MenuPage(){
-    const [data,setData]=useState([]);
-    useEffect(()=>{
-        async function fetchMenu(){
-            let myItems;
-            try{
-                myItems=await FetchItemsFromServer();
-            }catch(e){
-                console.log(e);
-            }
-            setData(myItems.Menu_items);
-        }
-        fetchMenu();
-    },[]);
+    const data=useContext(wholeMenu);
 
     return(
+        //TODO categorize items
         <div className='page-div header-padding'>
             <table>
                 <tbody>
