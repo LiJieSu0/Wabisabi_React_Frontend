@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useEffect, useState} from 'react';
+import { Routes, Route} from 'react-router-dom';
 
 import '../css/App.css'
 //import components 
@@ -10,6 +10,7 @@ import {MenuPage} from './components/MenuPage';
 import {OrderPage} from './components/OrderPage';
 import { FetchItemsFromServer } from './components/ServerUtil';
 import {wholeMenu} from './components/MyContext';
+import {CheckoutPage} from './components/CheckoutPage'
 
 export default function App(){
   const [menuFetched,setMenuFetched]=useState([]);
@@ -33,17 +34,18 @@ export default function App(){
           <Routes>
             <Route path='/' element={
               <HomePage/>
-            }
-            />
+            }/>
             <Route path='/menu' element={
               <MenuPage/>
-            }
-            />
+            }/>
             <Route path='/order' element={
               <OrderPage/>
-            }
-            />
+            }/>
+            <Route path='/order/checkout' element={
+              <CheckoutPage/>
+              }/>
 
+            {/* TODO 404 page route */}
           </Routes>
         </wholeMenu.Provider>
       <Footer/>

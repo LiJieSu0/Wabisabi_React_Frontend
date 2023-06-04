@@ -2,29 +2,54 @@ import {useState} from 'react';
 import PropTypes from 'prop-types';
 import '../../css/Modal.css'
 
-Modal.propTypes={
+OrderModal.propTypes={
     modalState:PropTypes.bool,
     setModalState:PropTypes.func,
-
+    setCart:PropTypes.func,
+    cart:PropTypes.array,
+    item_name:PropTypes.string,
 }
 
-export function Modal(props){
-    const {modalState,setModalState}=props;
-
+export function OrderModal(props){
+    const {modalState,setModalState,cart, setCart,item_name}=props;
+    
+    const [amount, setAmount]=useState(0);
     const [iceState,setIceState]=useState('regular_ice');
     const [sugarState,setSugarState]=useState('regular_sugar');
 
     
     function handleSubmit(e){
         e.preventDefault();
-        const custoumize={
-            'ice':iceState,
-            'sugar':sugarState
+        if(amount==0){
+            alert("Add at least one item!");
+            return;
         }
-        //TODO add customize order
-        console.log(custoumize)
+        const custoumize={
+            'item_name':item_name,
+            'amount':amount,
+            'ice_level':iceState,
+            'sugar_levle':sugarState,
+            'toppings':[]
+        }
+        setCart([...cart,custoumize]);
         alert('Add to cart');
-
+        setModalState(!modalState);
+        setAmount(0);
+        setIceState('regular_ice');
+        setSugarState('regular_sugar');
+        console.log(cart)
+    }
+    function handleAmountIncrease(){
+        if(amount>99){
+            return;
+        }
+        setAmount(amount+1);
+    }
+    function handleAmountReduce(){
+        if(amount<=0){
+            return;
+        }
+        setAmount(amount-1);
     }
 
     return(
@@ -33,7 +58,6 @@ export function Modal(props){
                 if(e.target.id==="background"){
                     setModalState(!modalState);
                 }
-                console.log(e.target.id)
             }}>
                 Modal
                 <div className='modal-inner' onClick={()=>setModalState(modalState)}>
@@ -41,7 +65,7 @@ export function Modal(props){
                         <img src="https://images.unsplash.com/photo-1685446983943-81ffb3073581?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80" alt="modal pic"/>
                     </div>
                     <div className='modal-text'>
-                        <h2>This is some text</h2>
+                        <h2>Tell us what you want!</h2>
                         <form onSubmit={handleSubmit}>
                             <label>
                                 Ice Level:
@@ -63,13 +87,18 @@ export function Modal(props){
                                 <option value="no_sugar">No Sugar 0%</option>
                                 </select>
                             </label>
-                            <button type="submit">submit</button>
+                            <div className='amount-manage'>
+                                <button type="button" onClick={handleAmountReduce}>-</button>
+                                <h1>{amount}</h1>
+                                <button type="button" onClick={handleAmountIncrease}>+</button>
+                            </div>
+                            <button type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
                 
             </div>
-            <button onClick={()=>setModalState(!modalState)}>Add to Order</button>
+            <button onClick={()=>setModalState(!modalState)}>Add to Order</button> {/*Open Model*/ }
         </div>
     );
 }
