@@ -8,10 +8,11 @@ OrderModal.propTypes={
     setCart:PropTypes.func,
     cart:PropTypes.array,
     item_name:PropTypes.string,
+    single_price:PropTypes.number
 }
 
 export function OrderModal(props){
-    const {modalState,setModalState,cart, setCart,item_name}=props;
+    const {modalState,setModalState,cart, setCart,item_name,single_price}=props;
     
     const [amount, setAmount]=useState(0);
     const [iceState,setIceState]=useState('regular_ice');
@@ -29,7 +30,8 @@ export function OrderModal(props){
             'amount':amount,
             'ice_level':iceState,
             'sugar_levle':sugarState,
-            'toppings':[]
+            'toppings':[],
+            'price':amount*single_price
         }
         setCart([...cart,custoumize]);
         alert('Add to cart');

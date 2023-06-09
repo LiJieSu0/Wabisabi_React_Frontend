@@ -22,13 +22,14 @@ export function OrderPage(){
         //TODO show some message for submit order success
     }
 
-
+    //TODO show the current cart items
     return(
         <div className="page-div">
             {menu.map((item)=>(
                 <OrderItemCard key={item._id}
                 item_id={item._id}
                 item_name={item.item_name}
+                single_price={item.price}
                 cart={cart}
                 setCart={setCart}
                 />

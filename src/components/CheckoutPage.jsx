@@ -9,8 +9,13 @@ export function CheckoutPage(){
     const [phoneNumber,setPhoneNumber]=useState('');
     const [email,setEmail]=useState('')
     const cart = useLocation().state;
+    console.log(cart)
     async function handleSubmit(e){
         e.preventDefault();
+        let total_price=cart.reduce((total,item)=>{
+            return total+item.price;
+        },0);
+        console.log(total_price);
         const order={
             "customer_fullname":customerName,
             "customer_phonenumber":phoneNumber,
@@ -21,7 +26,7 @@ export function CheckoutPage(){
             "order_items":cart,
             "order_code":"some code generated",
             "order_complete":false,
-            "total_price":9999999
+            "total_price":total_price
         }
         try{
             response=await SubmitOrderToServer(order);
@@ -47,7 +52,7 @@ export function CheckoutPage(){
     }
     return(
         <div>
-            <h1>checkout</h1>
+            <h1>Checkout Page</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type='text' id="name" value={customerName} onChange={handleChange}/>

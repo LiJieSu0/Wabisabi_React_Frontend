@@ -11,12 +11,13 @@ OrderItemCard.propTypes={
     item_amount:PropTypes.number,
     setCart:PropTypes.func,
     cart:PropTypes.array,
+    single_price:PropTypes.number
 }
 
 
 export function OrderItemCard(props){
     //TODO pops up window for each order
-    const {item_name,cart,setCart}=props
+    const {item_name,cart,setCart,single_price}=props
     const [modalState, setModalState]=useState(false);
     return(
         <div className="OrderItemCard">
@@ -24,10 +25,12 @@ export function OrderItemCard(props){
                 <h1>{item_name}</h1>
                 <OrderModal
                 item_name={item_name}
+                single_price={single_price}
                 modalState={modalState} 
                 setModalState={setModalState}
                 cart={cart}
                 setCart={setCart}
+
                 />
             </div>
         </div>
