@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter >
+  <BrowserRouter basename='https://lijiesu0.github.io/Wabisabi_React_Frontend/' >
     <React.StrictMode>
       <App />
     </React.StrictMode>
