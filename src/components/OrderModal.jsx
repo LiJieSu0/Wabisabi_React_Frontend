@@ -29,17 +29,15 @@ export function OrderModal(props){
             'item_name':item_name,
             'amount':amount,
             'ice_level':iceState,
-            'sugar_levle':sugarState,
+            'sugar_level':sugarState,
             'toppings':[],
             'price':amount*single_price
         }
         setCart([...cart,custoumize]);
-        alert('Add to cart');
         setModalState(!modalState);
         setAmount(0);
         setIceState('regular_ice');
         setSugarState('regular_sugar');
-        console.log(cart)
     }
     function handleAmountIncrease(){
         if(amount>99){

@@ -19,7 +19,7 @@ export function OrderPage(){
 
         alert("Direct to checkout page!");
         navigate('/order/checkout',{state:cart});
-        //TODO show some message for submit order success
+
     }
 
     //TODO show the current cart items
@@ -36,9 +36,9 @@ export function OrderPage(){
                 ))}
             <form onSubmit={handleSubmitCart}>
                 <label htmlFor="checkout">Check Out</label>
-                <button type="submit">Submit</button>
+                <button type="submit" id="checkout">Submit</button>
             </form>
-            {cart.length==0? (<h1>No data </h1>):( <h1>{cart[0].ice_level}</h1>)}
+            {cart.length==0? (<h1>No data </h1>):( <h1>{cart[0].ice_level}</h1>)} 
         </div>
     );}
 
