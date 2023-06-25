@@ -12,6 +12,10 @@ export function CheckoutPage(){
     const [email,setEmail]=useState('')
     const [notes,setNotes]=useState('')
     const cart = useLocation().state;
+    if(cart==null){
+        navigate('/order');
+        return 
+    }
     async function handleSubmit(e){
         e.preventDefault();
         let total_price=cart.reduce((total,item)=>{
@@ -102,7 +106,7 @@ export function CheckoutPage(){
                     <input type="text" id="notes" value={notes} onChange={handleChange}></input>
                 </div>
             <div id="order-list">
-                {cart.length===0 && "No Todo"}
+                {cart===null && "No Todo"}
                 {cart.map(item=>(
                     <div key={item.item_name}>
                         <h1>Item: {item.item_name}</h1>

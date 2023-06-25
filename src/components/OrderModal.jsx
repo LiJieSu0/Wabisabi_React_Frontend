@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
-import '../../css/Modal.css'
+import '../../css/Modal.css';
+
 
 OrderModal.propTypes={
     modalState:PropTypes.bool,
@@ -8,16 +9,18 @@ OrderModal.propTypes={
     setCart:PropTypes.func,
     cart:PropTypes.array,
     item_name:PropTypes.string,
-    single_price:PropTypes.number
+    single_price:PropTypes.number,
+    image:PropTypes.string,
 }
 
 export function OrderModal(props){
-    const {modalState,setModalState,cart, setCart,item_name,single_price}=props;
+    
+    const {modalState,setModalState,cart, setCart,item_name,single_price,image}=props;
     
     const [amount, setAmount]=useState(0);
     const [iceState,setIceState]=useState('regular_ice');
     const [sugarState,setSugarState]=useState('regular_sugar');
-
+    
     
     function handleSubmit(e){
         e.preventDefault();
@@ -40,7 +43,7 @@ export function OrderModal(props){
         setSugarState('regular_sugar');
     }
     function handleAmountIncrease(){
-        if(amount>99){
+        if(amount>10){
             return;
         }
         setAmount(amount+1);
@@ -59,10 +62,9 @@ export function OrderModal(props){
                     setModalState(!modalState);
                 }
             }}>
-                Modal
                 <div className='modal-inner' onClick={()=>setModalState(modalState)}>
                     <div className='modal-image'>
-                        <img src="https://images.unsplash.com/photo-1685446983943-81ffb3073581?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80" alt="modal pic"/>
+                        <img src={image} alt={`modal pic ${item_name}`}/>
                     </div>
                     <div className='modal-text'>
                         <h2>Tell us what you want!</h2>

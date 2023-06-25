@@ -5,7 +5,7 @@ export async function FetchItemsFromServer(){
     let response;
     try{
         response=await(await fetch(`${SERVER_URL}/menu`)).json();
-        console.log("request success");
+        console.log("request success")
     }catch(e){
         console.log(e);
     }
