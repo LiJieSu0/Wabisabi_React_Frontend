@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
+import { ModalContent } from './ModalContent';
 import '../../css/Modal.css';
 
 
@@ -42,17 +43,20 @@ export function OrderModal(props){
         setIceState('regular_ice');
         setSugarState('regular_sugar');
     }
-    function handleAmountIncrease(){
-        if(amount>10){
-            return;
+    function handleAmount(id){
+        if(id==="amountIncrease"){
+            if(amount>10){
+                return;
+            }
+            setAmount(amount+1);
         }
-        setAmount(amount+1);
-    }
-    function handleAmountReduce(){
-        if(amount<=0){
-            return;
+        if(id==="amountDecrease"){
+            if(amount<=0){
+                return;
+            }
+            setAmount(amount-1);
         }
-        setAmount(amount-1);
+
     }
 
     return(
@@ -63,44 +67,20 @@ export function OrderModal(props){
                 }
             }}>
                 <div className='modal-inner' onClick={()=>setModalState(modalState)}>
-                    <div className='modal-image'>
-                        <img src={image} alt={`modal pic ${item_name}`}/>
-                    </div>
-                    <div className='modal-text'>
-                        <h2>Tell us what you want!</h2>
-                        <form onSubmit={handleSubmit}>
-                            <label>
-                                Ice Level:
-                                <select value={iceState} onChange={(e)=>setIceState(e.target.value)}>
-                                <option value="regular_ice">Regular Ice 100%</option>
-                                <option value="less_ice">Less Ice 70%</option>
-                                <option value="half_ice">Half Ice 50%</option>
-                                <option value="little_ice">Little Ice 30%</option>
-                                <option value="no_ice">No Ice 0%</option>
-                                </select>
-                            </label>
-                            <label>
-                                Sugar Level:
-                                <select value={sugarState} onChange={(e)=>setSugarState(e.target.value)}>
-                                <option value="regular_sugar">Regular Sugar 100%</option>
-                                <option value="less_sugar">Less Sugar 70%</option>
-                                <option value="half_sugar">Half Sugar 50%</option>
-                                <option value="little_sugar">Little Sugar 30%</option>
-                                <option value="no_sugar">No Sugar 0%</option>
-                                </select>
-                            </label>
-                            <div className='amount-manage'>
-                                <button type="button" onClick={handleAmountReduce}>-</button>
-                                <h1>{amount}</h1>
-                                <button type="button" onClick={handleAmountIncrease}>+</button>
-                            </div>
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
+                    <ModalContent
+                            iceState={iceState}
+                            sugarState={sugarState}
+                            handleSubmit={handleSubmit}
+                            handleAmount={handleAmount}
+                            image={image}
+                            amount={amount}
+                            setIceState={setIceState}
+                            setSugarState={setSugarState}
+                            item_name={item_name}
+                    />
                 </div>
                 
             </div>
-            <button onClick={()=>setModalState(!modalState)}>Add to Order</button> {/*Open Model*/ }
         </div>
     );
 }

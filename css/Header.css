@@ -1,15 +1,16 @@
 .header-nav{
     z-index: 1;
-    width:90vw ;
+    width:100% ;
+    background-color:#be9e10;
 }
 
 .header-list{
-    background-color:#be9e10;
+    
     list-style-type: none;
-    margin: 0px;
     display: flex;
     justify-content: end;
     opacity: 80%;
+    margin-right: 1rem;
 }
 
 li{

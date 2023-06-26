@@ -18,31 +18,33 @@ OrderItemCard.propTypes={
 
 export function OrderItemCard(props){
     //TODO pops up window for each order
-    const [modalState, setModalState]=useState(false);
+    const [orderModalState, setOrderModalState]=useState(false);
     useEffect(() => {
         const body = document.body;
-        if (modalState) {
+        if (orderModalState) {
         body.style.overflow = 'hidden';
         }
         return () => {
         body.style.overflow = 'visible';
         };
-    }, [modalState]);
+    }, [orderModalState]);
     const {item_name,cart,setCart,single_price,image}=props
+
     return(
         <div className="OrderItemCard">
             <div className='item-card'>
-                <h1>{item_name}</h1>
+                <h3>{item_name}</h3>
                 <img src={image}></img>
                 <OrderModal
                 item_name={item_name}
                 single_price={single_price}
-                modalState={modalState} 
-                setModalState={setModalState}
+                modalState={orderModalState} 
+                setModalState={setOrderModalState}
                 cart={cart}
                 setCart={setCart}
                 image={image}
                 />
+                <button onClick={()=>setOrderModalState(!orderModalState)}>Add to Order</button> {/*Open Model*/ }
             </div>
         </div>
     );}

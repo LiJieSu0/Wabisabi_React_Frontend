@@ -33,3 +33,9 @@
 .modal-text{
     color:white;
 }
+
+.modal-content{
+    display: flex;
+    flex-direction: row;
+
+}

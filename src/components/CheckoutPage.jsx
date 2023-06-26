@@ -105,7 +105,7 @@ export function CheckoutPage(){
                     <label htmlFor="notes">Notes:</label>
                     <input type="text" id="notes" value={notes} onChange={handleChange}></input>
                 </div>
-            <div id="order-list">
+            <div id="shopping-cart">
                 {cart===null && "No Todo"}
                 {cart.map(item=>(
                     <div key={item.item_name}>
