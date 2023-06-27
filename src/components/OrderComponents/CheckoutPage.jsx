@@ -1,6 +1,6 @@
 import {useLocation} from 'react-router-dom';
 import {useState} from 'react';
-import { SubmitOrderToServer } from './ServerUtil';
+import { SubmitOrderToServer } from '../ServerUtil';
 import { useNavigate } from 'react-router-dom';
 
 

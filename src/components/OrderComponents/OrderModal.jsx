@@ -35,7 +35,8 @@ export function OrderModal(props){
             'ice_level':iceState,
             'sugar_level':sugarState,
             'toppings':[],
-            'price':amount*single_price
+            'price':amount*single_price,
+            'editModalState':false,
         }
         setCart([...cart,custoumize]);
         setModalState(!modalState);
@@ -77,6 +78,7 @@ export function OrderModal(props){
                             setIceState={setIceState}
                             setSugarState={setSugarState}
                             item_name={item_name}
+                            method={"Add to Order"}
                     />
                 </div>
                 

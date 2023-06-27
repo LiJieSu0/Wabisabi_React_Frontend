@@ -12,17 +12,28 @@ ModalContent.propTypes={
     setIceState:PropTypes.func,
     setSugarState:PropTypes.func,
     item_name:PropTypes.string,
+    method:PropTypes.string,
+
 }
 
 export function ModalContent(props){
-    const {iceState,setIceState,sugarState,setSugarState,handleSubmit,image,handleAmount,amount,item_name}=props;
+    const { iceState,
+            setIceState,
+            sugarState,
+            setSugarState,
+            handleSubmit,
+            image,
+            handleAmount,
+            amount,
+            item_name,
+            method}=props;
     return(
     <div className='modal-content'>
         <div className='modal-image'>
             <img src={image} alt={`modal pic ${item_name}`}/>
         </div>
         <div className='modal-text'>
-            <h2>Tell us what you want!</h2>
+            <h3>Tell us what you want!</h3>
             <form onSubmit={handleSubmit}>
                 <label>
                     Ice Level:
@@ -49,7 +60,7 @@ export function ModalContent(props){
                     <h1>{amount}</h1>
                     <button id="amountIncrease" type="button" onClick={(e)=>handleAmount(e.target.id)}>+</button>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit">{method}</button>
             </form>
         </div>
     </div>

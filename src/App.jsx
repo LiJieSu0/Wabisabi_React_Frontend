@@ -1,16 +1,16 @@
 import { useEffect, useState} from 'react';
 import { Routes, Route} from 'react-router-dom';
 
-import '../css/App.css'
+import './css/App.css'
 //import components 
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import {HomePage} from './components/HomePage';
 import {MenuPage} from './components/MenuPage';
-import {OrderPage} from './components/OrderPage';
+import {OrderPage} from './components/OrderComponents/OrderPage';
 import { FetchItemsFromServer } from './components/ServerUtil';
 import {wholeMenu} from './components/MyContext';
-import {CheckoutPage} from './components/CheckoutPage'
+import {CheckoutPage} from './components/OrderComponents/CheckoutPage'
 
 export default function App(){
   const [menuFetched,setMenuFetched]=useState([]);

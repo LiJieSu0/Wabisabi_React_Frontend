@@ -1,4 +1,4 @@
-import '../../css/HomePage.css';
+import '../css/HomePage.css';
 export function HomePage(){
     return(
         <div className="home-img-div page-div header-padding">
