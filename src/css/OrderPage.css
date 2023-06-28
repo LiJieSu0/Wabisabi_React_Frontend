@@ -13,4 +13,32 @@ button:hover{
     cursor:pointer;
 }
 
+#item-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number as per your desired cards per row */
+    grid-gap: 16px; /* Adjust the gap between cards as needed */
+    justify-content: center;
 
+}
+
+#order-page-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#shopping-cart{
+    border:black solid 2px;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding:20px;
+}
+
+#checkout-btn{
+    margin-top: auto;
+    position: absolute;
+    bottom: 10px;
+
+}

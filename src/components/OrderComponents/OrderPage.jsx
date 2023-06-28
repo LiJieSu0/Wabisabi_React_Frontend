@@ -4,7 +4,7 @@ import { OrderItemCard } from './OrderItemCard';
 import { wholeMenu } from '../MyContext';
 import {images} from '../FileUtil';
 import { ShoppingCartItem } from './ShoppingCartItem';
-// import '../../css/OrderPage.css'
+import '../../css/OrderPage.css';
 
 
 
@@ -26,34 +26,41 @@ export function OrderPage(){
 
     return(
         <div className="page-div">
-            {menu.map((item)=>(
-                <OrderItemCard key={item._id}
-                item_id={item._id}
-                item_name={item.item_name}
-                single_price={item.price}
-                cart={cart}
-                setCart={setCart}
-                image={images[item.item_name]}
-                />
-                ))}
-            <form onSubmit={handleSubmitCart}>
-                <label htmlFor="checkout">Check Out</label>
-                <button type="submit" id="checkout">Submit</button>
-            </form>
-            {cart.length==0 &&<h1> Such Empty</h1>}
+            <div id="order-page-container">
+            <div id="item-card-container">
+                {menu.map((item)=>(
+                    <OrderItemCard key={item._id}
+                    item_id={item._id}
+                    item_name={item.item_name}
+                    single_price={item.price}
+                    cart={cart}
+                    setCart={setCart}
+                    image={images[item.item_name]}
+                    />
+                    ))}
+
+            </div>
+            
             <div id="shopping-cart">
-            {cart.map((item,index)=>{
-                return(
-                    <div key={index}>
-                        <ShoppingCartItem 
-                            index={index}
-                            image={images[item.item_name]}
-                            cart={cart}
-                            setCart={setCart}
-                            item={item}
-                        />
-                    </div>
-                )})}
+                <h3>Shopping Cart</h3>
+                {cart.length==0 &&<h1> Such Empty</h1>}
+                {cart.map((item,index)=>{
+                    return(
+                        <div key={index}>
+                            <ShoppingCartItem 
+                                index={index}
+                                image={images[item.item_name]}
+                                cart={cart}
+                                setCart={setCart}
+                                item={item}
+                            />
+                        </div>
+                    )})}
+                <div id="checkout-btn">
+                    <label htmlFor="checkout">Check Out</label><br/>
+                    <button onClick={handleSubmitCart} id="checkout">Submit</button>
+                </div>
+            </div>
             </div>
         </div>
     );}

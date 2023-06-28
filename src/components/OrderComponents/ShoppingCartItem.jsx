@@ -15,9 +15,10 @@ export function ShoppingCartItem(props){
     const {index,cart,setCart,image}=props;
     const [editModalState, setEditModalState]=useState(false);
     let item=cart[index];
-
+    //TODO adjust the showing text
     return(
         <div>
+            
             <p>Item: {item.item_name}</p>
                         <p>Amount: {item.amount}</p>
                         <p>{(item.ice_level)}</p>
