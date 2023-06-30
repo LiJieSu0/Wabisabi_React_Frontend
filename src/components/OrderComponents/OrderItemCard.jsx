@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState,useEffect } from 'react';
 import {OrderModal} from './OrderModal'
 
-import '../../css/OrderItemcCard.css'
+import '../../css/OrderItemCard.css'
 
 
 OrderItemCard.propTypes={
@@ -44,7 +44,8 @@ export function OrderItemCard(props){
                 setCart={setCart}
                 image={image}
                 />
-                <button onClick={()=>setOrderModalState(!orderModalState)}>Add to Order</button> {/*Open Model*/ }
+                <h3>$ {single_price.toFixed(2)}</h3>
+                <button className='btn item-card-btn' onClick={()=>setOrderModalState(!orderModalState)}>Add to Order</button> {/*Open Model*/ }
             </div>
         </div>
     );}

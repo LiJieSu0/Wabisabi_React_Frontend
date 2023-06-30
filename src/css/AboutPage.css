@@ -1,0 +1,23 @@
+.billboard-container {
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.billboard-content {
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+    0% {
+    transform: translateX(25%);
+    }
+    100% {
+    transform: translateX(-75%);
+    }
+}
+
+.billboard-item {
+    flex: 0 0 100%;
+    /* Additional styling for each billboard item */
+}

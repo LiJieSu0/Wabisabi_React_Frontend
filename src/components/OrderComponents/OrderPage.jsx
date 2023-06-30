@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { OrderItemCard } from './OrderItemCard';
 import { wholeMenu } from '../MyContext';
 import {images} from '../FileUtil';
-import { ShoppingCartItem } from './ShoppingCartItem';
+import { ShoppingCartItem } from './ShoppingCart';
 import '../../css/OrderPage.css';
 
 
@@ -43,7 +43,7 @@ export function OrderPage(){
             
             <div id="shopping-cart">
                 <h3>Shopping Cart</h3>
-                {cart.length==0 &&<h1> Such Empty</h1>}
+                {cart.length==0 &&<h3 id='empty-shopping-cart'>There are currently no items in your cart.</h3>}
                 {cart.map((item,index)=>{
                     return(
                         <div key={index}>
@@ -57,8 +57,7 @@ export function OrderPage(){
                         </div>
                     )})}
                 <div id="checkout-btn">
-                    <label htmlFor="checkout">Check Out</label><br/>
-                    <button onClick={handleSubmitCart} id="checkout">Submit</button>
+                    <button onClick={handleSubmitCart} id="checkout">Check Out</button>
                 </div>
             </div>
             </div>

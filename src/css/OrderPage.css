@@ -15,10 +15,10 @@ button:hover{
 
 #item-card-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust the number as per your desired cards per row */
-    grid-gap: 16px; /* Adjust the gap between cards as needed */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 16px; 
     justify-content: center;
-
+    
 }
 
 #order-page-container{
@@ -28,17 +28,24 @@ button:hover{
 }
 
 #shopping-cart{
-    border:black solid 2px;
+    width:250px;
+    border:rgb(202, 162, 162) solid 2px;
     margin-right: 2rem;
-    margin-top: 0.5rem;
+    margin-top: 16px;
     margin-bottom: 0.5rem;
     position: relative;
     padding:20px;
+    z-index: -1;
 }
 
 #checkout-btn{
     margin-top: auto;
     position: absolute;
     bottom: 10px;
+}
+
+#empty-shopping-cart{
+    font-size: 1rem;
+    color: rgb(187, 209, 226);
 
 }

@@ -11,6 +11,8 @@ import {OrderPage} from './components/OrderComponents/OrderPage';
 import { FetchItemsFromServer } from './components/ServerUtil';
 import {wholeMenu} from './components/MyContext';
 import {CheckoutPage} from './components/OrderComponents/CheckoutPage'
+import {AboutPage} from './components/AboutPage';
+
 
 export default function App(){
   const [menuFetched,setMenuFetched]=useState([]);
@@ -35,7 +37,7 @@ export default function App(){
             <Route path='/' element={
               <HomePage/>
             }/>
-            <Route path='/menu' element={
+            <Route path='/album' element={
               <MenuPage/>
             }/>
             <Route path='/order' element={
@@ -44,7 +46,9 @@ export default function App(){
             <Route path='/order/checkout' element={
               <CheckoutPage/>
               }/>
-
+            <Route path='/about' element={
+              <AboutPage/>
+              }/>
             {/* TODO 404 page route */}
           </Routes>
         </wholeMenu.Provider>

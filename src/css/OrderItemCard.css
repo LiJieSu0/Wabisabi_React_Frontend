@@ -19,8 +19,9 @@
 
   .item-card {
     width: 300px;
+    height: 350px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     padding: 16px;
     margin: 16px;
     display: flex;
@@ -31,7 +32,8 @@
   }
   
   .item-card>img {
-    width: 100%;
+    width: 70%;
+    min-height: 200px;
     max-height: 200px;
     object-fit: cover;
     margin-bottom: 16px;
@@ -45,7 +47,7 @@
   .item-card p {
     margin-bottom: 16px;
   }
-  
+
 
   
   

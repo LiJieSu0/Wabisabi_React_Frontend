@@ -1,11 +1,11 @@
 .header-nav{
+    background-color: #C86001;
     z-index: 1;
     width:100% ;
-    background-color:#be9e10;
+    position: sticky;
 }
 
 .header-list{
-    
     list-style-type: none;
     display: flex;
     justify-content: end;
@@ -18,5 +18,34 @@ li{
 }
 
 li>a:hover{
-    color: red;
+    color:wheat;
+}
+
+li>a{
+    color: rgb(154, 221, 248);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#header-sign{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#header-sign>div{
+    margin-left: 1rem;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5rem;
+}
+
+#sign-with-log{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }

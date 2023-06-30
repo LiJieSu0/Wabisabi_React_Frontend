@@ -18,7 +18,6 @@ export function ShoppingCartItem(props){
     //TODO adjust the showing text
     return(
         <div>
-            
             <p>Item: {item.item_name}</p>
                         <p>Amount: {item.amount}</p>
                         <p>{(item.ice_level)}</p>
