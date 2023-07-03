@@ -2,9 +2,9 @@ import { useContext,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { OrderItemCard } from './OrderItemCard';
 import { wholeMenu } from '../MyContext';
-import {images} from '../FileUtil';
+import {teaImages} from '../FileUtil';
 import { ShoppingCartItem } from './ShoppingCart';
-import '../../css/OrderPage.css';
+import '@styles/OrderPage.css';
 
 
 
@@ -12,7 +12,7 @@ export function OrderPage(){
     const [cart,setCart]=useState([]);
     const navigate=useNavigate ();
     const menu=useContext(wholeMenu);
-    images['Oolong']=images['Oolong'].replace("/@fs",""); // no idea why @fs occurs in path
+    teaImages['Oolong']=teaImages['Oolong'].replace("/@fs",""); // no idea why @fs occurs in path
     function handleSubmitCart(e){
         e.preventDefault();
         if(cart.length==0){
@@ -35,7 +35,7 @@ export function OrderPage(){
                     single_price={item.price}
                     cart={cart}
                     setCart={setCart}
-                    image={images[item.item_name]}
+                    image={teaImages[item.item_name]}
                     />
                     ))}
 
@@ -49,7 +49,7 @@ export function OrderPage(){
                         <div key={index}>
                             <ShoppingCartItem 
                                 index={index}
-                                image={images[item.item_name]}
+                                image={teaImages[item.item_name]}
                                 cart={cart}
                                 setCart={setCart}
                                 item={item}

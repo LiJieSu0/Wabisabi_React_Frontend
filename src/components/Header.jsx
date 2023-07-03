@@ -1,5 +1,5 @@
-import '../css/Header.css';
-import logoPic from '../assests/img/logo.png';
+import '@styles/Header.css';
+import logoPic from '@images/logo.png';
 export function Header(){
 return(
     <nav className='header-nav'>

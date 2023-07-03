@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {useState} from 'react';
-import '../../css/Modal.css';
+import '@styles/Modal.css';
 import { ModalContent } from './ModalContent';
 
 EditModal.propTypes={

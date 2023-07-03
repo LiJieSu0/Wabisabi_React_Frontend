@@ -1,6 +1,29 @@
-import '../css/HomePage.css';
-import Wakasi from '../assests/img/wakasi.png';
+import '@styles/HomePage.css';
+import {wagashiImages} from '@components/FileUtil'
+
+import {useState} from 'react';
+
 export function HomePage(){
+    let imgSet=Object.values(wagashiImages);
+    const [currImg,setCurrImg]=useState(imgSet[0]);
+
+    function handleChangeImg(id){
+        let currIdx=imgSet.indexOf(currImg);
+        if(id=='left'){
+            if(currIdx-1<0){
+                setCurrImg(imgSet[imgSet.length-1]);
+                return;
+            }
+            setCurrImg(imgSet[currIdx-1]);
+        }
+        else{
+            if(currIdx+1>=imgSet.length){
+                setCurrImg(imgSet[0]);
+                return;
+            }
+            setCurrImg(imgSet[currIdx+1]);
+        }
+    }
     return(
         <div>
             <div className="header-padding" id="home-first-img-div">
@@ -18,8 +41,14 @@ export function HomePage(){
                 </div>
             </div>
             <div id="home-third-div">
-                <img id="home-third-img-div" src={Wakasi} alt="waskasi"/>
+                <div id="home-third-img-set">
+                    <img id="home-third-img-div" src={currImg} alt="waskasi"/>
                     <div>
+                        <button id='left' className='change-img-btn' onClick={(e)=>handleChangeImg(e.target.id)}>&#x3C;</button>
+                        <button id='right' className='change-img-btn' onClick={(e)=>handleChangeImg(e.target.id)}>&#x003E;</button>
+                    </div>
+                </div>
+                    <div id="home-third-contend-div">
                         <p>It’s all about the design and art.</p>
                         <p>Order Now!</p>
                         <p>See more picture wakasi</p>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../../css/Modal.css';
+import '@styles/Modal.css';
 
 ModalContent.propTypes={
     iceState:PropTypes.string,

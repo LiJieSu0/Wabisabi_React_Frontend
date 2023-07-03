@@ -49,8 +49,56 @@
 }
 
 #home-third-img-div{
+    display: block;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-width: 50vw;
+    max-width: 600px;
+    min-width: 600px;
+    min-height: 750px;
+    max-height: 750px;
 }
+
+#home-third-img-bt{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    
+}
+
+#home-third-img-set{
+    position: relative;
+    display: inline-block;
+    min-height: 750px;
+    max-height: 750px;
+}
+
+#home-third-img-set:hover .change-img-btn{
+    opacity: 1;
+}
+
+#left{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-left:0.1rem;
+}
+
+#right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right:0.1rem;
+
+}
+.change-img-btn{
+    border-radius: 5px;
+    opacity: 0.3;
+    transition: ease-in;
+    border: none;
+}
+.change-img-btn:hover{
+    background-color: rgb(212, 123, 39);
+}
+

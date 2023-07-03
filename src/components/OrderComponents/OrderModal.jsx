@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import { ModalContent } from './ModalContent';
-import '../../css/Modal.css';
+import '@styles/Modal.css';
 
 
 OrderModal.propTypes={

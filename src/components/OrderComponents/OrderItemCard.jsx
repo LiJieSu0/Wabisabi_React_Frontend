@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState,useEffect } from 'react';
 import {OrderModal} from './OrderModal'
 
-import '../../css/OrderItemCard.css'
+import '@styles/OrderItemCard.css'
 
 
 OrderItemCard.propTypes={
